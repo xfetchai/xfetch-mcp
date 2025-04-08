@@ -1,7 +1,7 @@
 [project]
 name = "mcp-server-xfetch"
-version = "0.0.1"
-description = "Enhanced MCP fetch server (fetch on steroids) that works through xfet.ch service. Unlocks access to websites blocked by Cloudflare and other protection systems that regular fetch can't handle."
+version = "0.1.0"
+description = "Enhanced MCP fetch server (fetch on steroids) that works through xfetch.ai service. Unlocks access to websites blocked by Cloudflare and other protection systems that regular fetch can't handle."
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [{ name = "XFetch Team", email = "xfetchai@gmail.com" }]
@@ -30,8 +30,8 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://xfet.ch"
-Documentation = "https://xfet.ch/docs"
+Homepage = "https://xfetch.ai"
+Documentation = "https://xfetch.ai"
 Repository = "https://github.com/xfetchai/mcp-server-xfetch"
 
 [project.scripts]

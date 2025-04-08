@@ -84,33 +84,53 @@ Add to your Claude settings:
 ```
 </details>
 
-<details>
-<summary>Using pip installation</summary>
 
+
+### API Token
+
+XFetch service offers two usage tiers:
+
+#### Free Tier
+The package includes a default API token that allows limited free usage. This is great for:
+- Testing and evaluation
+- Personal projects
+- Small-scale non-commercial use
+
+However, the free tier has rate limits and may have occasional stability issues.
+
+#### Commercial/Production Use
+For stable and reliable service, especially for:
+- Commercial projects
+- Production environments
+- High-volume requests
+- Guaranteed uptime and support
+
+Visit [xfetch.ai](https://xfetch.ai) to:
+1. Register for a commercial account
+2. Get your dedicated API token
+3. Access premium features and support
+
+Once you have your token, you can set it up in one of these ways:
+
+```bash
+# Option 1: Environment variable (recommended)
+export XFETCH_API_TOKEN=your_token_here
+```
+
+```bash
+# Option 2: Command line argument
+python -m mcp_server_xfetch --api-token=your_token_here
+```
+
+Or in your Claude configuration:
 ```json
 "mcpServers": {
   "xfetch": {
     "command": "python",
-    "args": ["-m", "mcp_server_xfetch"]
+    "args": ["-m", "mcp_server_xfetch", "--api-token=your_token_here"]
   }
 }
 ```
-</details>
-
-### API Token
-
-To use the XFetch service, you need an API token. The default token included in the package has rate limits. For production use:
-
-1. Visit [xfet.ch](https://xfet.ch) to register
-2. Get your API token from the dashboard
-3. Set the token in your environment:
-   ```bash
-   export XFETCH_API_TOKEN=your_token_here
-   ```
-   Or pass it directly in the configuration:
-   ```json
-   "args": ["mcp-server-xfetch", "--api-token=your_token_here"]
-   ```
 
 ## Examples
 
@@ -182,6 +202,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-- Documentation: [xfet.ch/docs](https://xfet.ch/docs)
+- Documentation: [xfetch.ai/docs](https://xfetch.ai/docs)
 - Issues: [GitHub Issues](https://github.com/xfetchai/mcp-server-xfetch/issues)
 - Email: xfetchai@gmail.com

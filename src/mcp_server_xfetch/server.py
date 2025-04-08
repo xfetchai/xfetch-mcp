@@ -1,5 +1,6 @@
 from typing import Annotated, Tuple
 from urllib.parse import quote
+import os
 
 import markdownify
 import readabilipy.simple_json
@@ -22,7 +23,7 @@ import httpx
 import re
 from parsel import Selector
 
-API_TOKEN = "boostmyai"  # Set your API token here
+API_TOKEN = os.getenv("XFETCH_API_TOKEN", "boostmyai")  # Default token with limited usage
 API_BASE_URL = "https://mcp.xfet.ch/fget"
 
 
@@ -184,8 +185,16 @@ class XFetch(BaseModel):
     ]
 
 
-async def serve() -> None:
-    """Run the xfetch MCP server."""
+async def serve(api_token: str | None = None) -> None:
+    """Run the xfetch MCP server.
+    
+    Args:
+        api_token: Optional API token to override the default or environment variable
+    """
+    global API_TOKEN
+    if api_token:
+        API_TOKEN = api_token
+    
     server = Server("mcp-xfetch")
 
     @server.list_tools()
