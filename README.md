@@ -71,20 +71,20 @@ Add to your Claude settings:
 ```
 </details>
 
+
+
 <details>
-<summary>Using docker</summary>
+<summary>Using pip installation</summary>
 
 ```json
 "mcpServers": {
   "xfetch": {
-    "command": "docker",
-    "args": ["run", "-i", "--rm", "mcp/xfetch"]
+    "command": "python",
+    "args": ["-m", "mcp_server_xfetch"]
   }
 }
 ```
 </details>
-
-
 
 ### API Token
 
@@ -202,6 +202,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-- Documentation: [xfetch.ai/docs](https://xfetch.ai/docs)
+- Documentation: [xfetch.ai](https://xfetch.ai)
 - Issues: [GitHub Issues](https://github.com/xfetchai/mcp-server-xfetch/issues)
 - Email: xfetchai@gmail.com
