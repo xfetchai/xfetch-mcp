@@ -106,7 +106,7 @@ async def fetch_url(
             response = await client.get(
                 api_url,
                 follow_redirects=True,
-                timeout=30,
+                timeout=60,
             )
         except httpx.HTTPError as e:
             raise McpError(ErrorData(code=INTERNAL_ERROR, message=f"Failed to fetch {url}: {e!r}"))
